@@ -1,8 +1,33 @@
 # API Test Cases Documentation
 
-## Overview
-This document contains comprehensive test cases for the Registration, Authorization, and Security endpoints of the Avito QA Internship API.
+Overview
 
+API Base URLs
+
+Authentication: https://qa-internship.avito.com/api/1/register & /authorize
+Items (V1): https://qa-internship.avito.com/api/1/item
+Items (V2): https://qa-internship.avito.com/api/2/item
+Seller Items: https://qa-internship.avito.com/api/1/{sellerID}/item
+Statistics (V1): https://qa-internship.avito.com/api/1/statistic/{itemID}
+Statistics (V2): https://qa-internship.avito.com/api/2/statistic/{itemID}
+Core Functionality Tested
+
+User Registration - Username validation, password requirements, duplicate checks
+Authorization - Login flow, token generation, token formats
+Security - Bearer token validation, unauthorized access prevention
+Item Management - CRUD operations, data validation, type checking
+Seller Operations - Listing items by seller
+Statistics - Retrieving and verifying item statistics
+Data Integrity - Consistency across API versions, data persistence
+
+This comprehensive test documentation covers 152 test cases for the Avito QA Internship API, including:
+
+Registration & Authentication Tests (39 test cases)
+Security Tests (7 test cases)
+Item Creation & Retrieval (55 test cases)
+Seller Items Management (10 test cases)
+Statistics Endpoints (V1 & V2) (19 test cases)
+Item Deletion (14 test cases)
 ---
 
 ## 1. Registration Tests (Username Check)
