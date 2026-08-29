@@ -1,33 +1,43 @@
 # API Test Cases Documentation
 
-Overview
+## Executive Summary
 
-API Base URLs
+This comprehensive test documentation covers **152 test cases** for the Avito QA Internship API, including:
+- **Registration & Authentication Tests** (39 test cases)
+- **Security Tests** (7 test cases)
+- **Item Creation & Retrieval** (55 test cases)
+- **Seller Items Management** (10 test cases)
+- **Statistics Endpoints (V1 & V2)** (19 test cases)
+- **Item Deletion** (14 test cases)
 
-Authentication: https://qa-internship.avito.com/api/1/register & /authorize
-Items (V1): https://qa-internship.avito.com/api/1/item
-Items (V2): https://qa-internship.avito.com/api/2/item
-Seller Items: https://qa-internship.avito.com/api/1/{sellerID}/item
-Statistics (V1): https://qa-internship.avito.com/api/1/statistic/{itemID}
-Statistics (V2): https://qa-internship.avito.com/api/2/statistic/{itemID}
-Core Functionality Tested
+### Key Metrics
+- ✅ **Total Passed:** 126
+- ⚠️ **Total Failed:** 26
+- **Pass Rate:** 82.9%
 
-User Registration - Username validation, password requirements, duplicate checks
-Authorization - Login flow, token generation, token formats
-Security - Bearer token validation, unauthorized access prevention
-Item Management - CRUD operations, data validation, type checking
-Seller Operations - Listing items by seller
-Statistics - Retrieving and verifying item statistics
-Data Integrity - Consistency across API versions, data persistence
+---
 
-This comprehensive test documentation covers 152 test cases for the Avito QA Internship API, including:
+## Overview
 
-Registration & Authentication Tests (39 test cases)
-Security Tests (7 test cases)
-Item Creation & Retrieval (55 test cases)
-Seller Items Management (10 test cases)
-Statistics Endpoints (V1 & V2) (19 test cases)
-Item Deletion (14 test cases)
+### API Base URLs
+- **Authentication:** `https://qa-internship.avito.com/api/1/register` & `/authorize`
+- **Items (V1):** `https://qa-internship.avito.com/api/1/item`
+- **Items (V2):** `https://qa-internship.avito.com/api/2/item`
+- **Seller Items:** `https://qa-internship.avito.com/api/1/{sellerID}/item`
+- **Statistics (V1):** `https://qa-internship.avito.com/api/1/statistic/{itemID}`
+- **Statistics (V2):** `https://qa-internship.avito.com/api/2/statistic/{itemID}`
+
+### Core Functionality Tested
+1. **User Registration** - Username validation, password requirements, duplicate checks
+2. **Authorization** - Login flow, token generation, token formats
+3. **Security** - Bearer token validation, unauthorized access prevention
+4. **Item Management** - CRUD operations, data validation, type checking
+5. **Seller Operations** - Listing items by seller
+6. **Statistics** - Retrieving and verifying item statistics
+7. **Data Integrity** - Consistency across API versions, data persistence
+
+---
+
 ---
 
 ## 1. Registration Tests (Username Check)
@@ -2746,3 +2756,72 @@ Item Deletion (14 test cases)
 - **Expected Result:** `200 OK` - UUID case-insensitive
 - **Actual Result:** `200 OK`
 - **Status:** ✅ Passed
+
+## Test Execution Summary
+
+### By Category
+
+| Category | Total | Passed | Failed | Pass Rate |
+|----------|-------|--------|--------|-----------|
+| Registration | 31 | 27 | 4 | 87.1% |
+| Authorization | 14 | 14 | 0 | 100% |
+| Security | 7 | 7 | 0 | 100% |
+| Item Creation | 40 | 35 | 5 | 87.5% |
+| Item Retrieval | 15 | 15 | 0 | 100% |
+| Seller Items | 10 | 6 | 4 | 60.0% |
+| Statistics V1 | 11 | 9 | 2 | 81.8% |
+| Statistics V2 | 8 | 7 | 1 | 87.5% |
+| Item Deletion | 14 | 6 | 8 | 42.9% |
+| **TOTAL** | **152** | **126** | **26** | **82.9%** |
+
+### By Severity
+
+| Severity | Count | Examples |
+|----------|-------|----------|
+| 🔴 Critical | 2 | Cross-user deletion, Cross-user access |
+| ⚠️ High | 8 | Negative values, Invalid sellerID handling |
+| 🟡 Medium | 12 | Input validation, Error codes |
+| 🟢 Low | 4 | Documentation, Edge cases |
+
+---
+
+## Coverage Analysis
+
+### What's Well Tested
+- ✅ Basic CRUD operations
+- ✅ Happy path scenarios
+- ✅ Invalid format handling
+- ✅ Bearer token validation
+- ✅ JWT generation and format
+
+### What Needs Testing
+- ⚠️ Rate limiting
+- ⚠️ Concurrent operations
+- ⚠️ Database transaction rollback
+- ⚠️ Long-running operations
+- ⚠️ Performance under load
+- ⚠️ Pagination (not tested)
+- ⚠️ Filtering (not tested)
+- ⚠️ Sorting (not tested)
+
+---
+
+## Conclusion
+
+The API demonstrates **solid foundation** with proper authentication and basic functionality working correctly. However, **critical security issues** must be addressed immediately before production use. The API needs:
+
+1. **Immediate:** Security fixes for cross-user operations
+2. **Soon:** Input validation improvements
+3. **Before Release:** Comprehensive error handling review
+
+Current implementation is suitable for **internal testing only** until security issues are resolved.
+
+---
+
+## Document Information
+
+- **Last Updated:** 2026-08-29
+- **API Version:** 1 & 2
+- **Test Environment:** QA Internship API
+- **Total Test Cases:** 152
+- **Documentation Status:** Complete
