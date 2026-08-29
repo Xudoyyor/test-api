@@ -1,6 +1,5 @@
 # BUG REPORTS
 
-This file contains bug reports generated from TESTCASES.md (last updated 2026-08-29). Each entry includes the failing test case ID, description, steps to reproduce, expected vs actual behavior, severity, and suggested fix.
 
 ---
 
@@ -245,11 +244,5 @@ This file contains bug reports generated from TESTCASES.md (last updated 2026-08
 
 ---
 
-## Notes and Next Steps
-- These bug reports were created from the failing test cases recorded in TESTCASES.md (2026-08-29).
-- Recommendation: prioritize critical security fixes first (BUG-STAT-002, BUG-DEL-003), then high-severity validation and error-handling issues.
-- I can open GitHub issues for each of these if you want (one issue per bug) and link them to this BUGS.md. Tell me if you want me to create issues and/or include suggested code pointers or stack traces.
 
----
 
-*Generated automatically from TESTCASES.md.*
